@@ -1,212 +1,96 @@
-🚀 Backend Developer Assignment – Django REST API + Vanilla JS Frontend
-A Complete Scalable Backend System with Authentication, RBAC, CRUD, Swagger, and Frontend UI
-
-📘 Overview
-
-This project was built as part of the Primetrade.ai Backend Developer Internship Assignment.
-It demonstrates the development of a secure, modular, scalable backend API with a simple frontend interface for interaction.
-
-The system includes:
-
-🔐 JWT Authentication
-
-👥 Role-Based Access Control (Admin/User)
-
-📝 CRUD operations for Tasks
-
-🧪 Swagger API Docs
-
-🗄️ MySQL DB Integration
-
-🌐 Frontend UI (Bootstrap + Vanilla JS)
-
-📦 API Versioning (api/v1/)
-
-🔧 Scalable architecture ready for production
-
-⚙️ Tech Stack
-Backend
-
-Python 3.12
-
-Django 5
-
-Django REST Framework (DRF)
-
-MySQL
-
-SimpleJWT
-
-CORS Headers
-
-drf_yasg (Swagger UI)
-
-python-dotenv
-
-Frontend
-
-HTML5
-
-Bootstrap 5
-
-Vanilla JavaScript
-
-Fetch API
-
-🚀 Features Implemented
-🔑 Authentication
-
-User Registration
-
-Secure Login (JWT - Access + Refresh tokens)
-
-Hashed passwords
-
-Role-based access via is_admin
-
-📝 Task Management
-
-CRUD operations
-
-Every task belongs to a user
-
-Admin can access all tasks
-
-Users can only access their own tasks
-
-🔒 Security
-
-JWT protected routes
-
-Custom permission class: IsAdminOrOwner
-
-Input validation
-
-CORS setup
-
-.env based configuration
-
-🌐 Frontend UI
-
-Register new users
-
-Login to get JWT
-
-View user-specific tasks
-
-Add, delete tasks
-
-Shows success/error responses
-
-🧩 API Endpoints
-🔐 Authentication Endpoints
-Method	Endpoint	Description	Auth
-POST	/api/v1/accounts/register/	Register user	❌
-POST	/api/v1/token/	Login (JWT)	❌
-GET	/api/v1/accounts/me/	Get current logged-in user	✅
-📝 Task Endpoints
-Method	Endpoint	Description	Auth
-GET	/api/v1/tasks/	List tasks	✅
-POST	/api/v1/tasks/	Create new task	✅
-PUT	/api/v1/tasks/{id}/	Update task	✅
-DELETE	/api/v1/tasks/{id}/	Delete task	✅
-🧪 API Documentation
-Swagger UI
-
-🔗 http://127.0.0.1:8000/api/docs/
-
-🧠 Scalability Notes
-Architecture
-
-App-based modular structure (accounts, tasks)
-
-JWT allows horizontal scaling
-
-DB-agnostic ORM (can switch to PostgreSQL easily)
-
-.env separates prod/dev configs
-
-Scaling Options
-
-Add Redis cache
-
-Dockerize project (backend + MySQL)
-
-Use Nginx + Gunicorn in production
-
-Deploy on:
-
-Render
-
-Railway
-
-AWS EC2
-
-DigitalOcean
-
-⚡ Setup Instructions
-1️⃣ Clone Repository
-git clone https://github.com/YourUsername/Primetrade_BackendAssignment.git
-cd Primetrade_BackendAssignment
-
-2️⃣ Create Virtual Environment
-python -m venv venv
-venv\Scripts\activate   # Windows
-
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-
-4️⃣ Add .env File
-SECRET_KEY=django-insecure-yourkey
-DEBUG=True
-
-DB_ENGINE=django.db.backends.mysql
-DB_NAME=primetrade_ai
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_HOST=127.0.0.1
-DB_PORT=3306
-
-5️⃣ Run Migrations
-python manage.py makemigrations
-python manage.py migrate
-
-6️⃣ Start Server
-python manage.py runserver
-
-🌐 Frontend Usage
-
-Open the frontend/index.html file in your browser.
-
-Features available:
-
-Register user
-
-Login
-
-Manage tasks using JWT
-
-Live CRUD features
-
-📁 Project Structure
-Primetrade_BackendAssignment/
-│── accounts/
-│── tasks/
-│── core/
-│── frontend/
-│   ├── index.html
-│   ├── dashboard.html
-│   ├── script.js
-│── manage.py
-│── requirements.txt
-│── README.md
-│── .env (not included in repo)
-
-👨‍💻 Author
-
-Aniket Sonawane
-Backend Developer – Python | Django | DRF
-📧 sonawane.aniket1105@gmail.com
-
-📞 +91 9552383172
-🌐 GitHub | LinkedIn
+# 🧩 Backend Developer Assignment – Django REST API
+
+## 📘 Overview
+This project was built as part of the **Backend Developer Internship Assignment**.  
+It demonstrates a scalable and secure backend system with:
+- JWT-based Authentication  
+- Role-Based Access (Admin / User)  
+- CRUD APIs for Tasks  
+- Swagger API Documentation  
+- MySQL Database Integration  
+- Vanilla JS Frontend for Testing APIs  
+
+---
+
+## ⚙️ Tech Stack
+- **Backend:** Django, Django REST Framework (DRF)
+- **Auth:** JWT (via `rest_framework_simplejwt`)
+- **Database:** MySQL
+- **Frontend:** HTML + Bootstrap + Vanilla JavaScript
+- **Docs:** Swagger (drf_yasg)
+- **Others:** dotenv, CORS headers
+
+---
+
+## 🚀 Features Implemented
+
+### 🔑 Authentication
+- User Registration with password hashing  
+- JWT-based Login (access + refresh tokens)
+- Role-based access (`is_admin` flag in User model)
+
+### 📋 Task Management
+- CRUD APIs for Tasks
+- Each user can manage their own tasks
+- Admins can view, edit, or delete all tasks
+
+### 🧱 Security
+- JWT protected routes
+- Input validation and sanitization
+- Custom permissions for ownership and admin access
+
+### 🌐 Frontend
+- Simple UI to register, login, and manage tasks
+- JWT stored securely in localStorage
+- Real-time task creation/deletion integrated with backend
+
+---
+
+## 🧩 API Endpoints
+
+| Method | Endpoint | Description | Auth Required |
+|--------|-----------|--------------|----------------|
+| POST | `/api/v1/accounts/register/` | Register new user | ❌ |
+| POST | `/api/v1/token/` | Login and get JWT tokens | ❌ |
+| GET | `/api/v1/accounts/me/` | Get current user info | ✅ |
+| GET | `/api/v1/tasks/` | List all tasks | ✅ |
+| POST | `/api/v1/tasks/` | Create new task | ✅ |
+| PUT | `/api/v1/tasks/{id}/` | Update task | ✅ |
+| DELETE | `/api/v1/tasks/{id}/` | Delete task | ✅ |
+
+---
+
+## 🧪 API Documentation
+- Swagger UI → [http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/)
+- OpenAPI Spec → `docs/openapi.json`
+- Postman Collection → `docs/postman_collection.json` (optional)
+
+---
+
+## 🧠 Scalability & Deployment Notes
+
+### Scalability
+- Modular app structure (accounts, tasks) for microservice expansion
+- DB-agnostic via ORM (easily switch to PostgreSQL or MongoDB)
+- JWT stateless authentication allows horizontal scaling (load-balanced servers)
+- Can add caching (Redis) for performance
+- Future-ready for containerization (Docker)
+
+### Security
+- Passwords hashed via Django’s `AbstractUser`
+- JWT expiration and refresh token flow
+- CORS and CSRF configured for frontend access
+- Environment variables handled securely via `.env`
+
+### Deployment
+- Can run via Docker Compose (`Django + MySQL`)
+- Easily deployable on platforms like Render, Railway, or AWS EC2
+
+---
+
+## ⚡ Setup Instructions
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/AniketSonawane11/BackendAssignment-Aniket.git
+cd BackendAssignment-Aniket
