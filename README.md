@@ -1,18 +1,5 @@
-.
-
 🚀 Backend Developer Assignment – Django REST API + Vanilla JS Frontend
 A Complete Scalable Backend System with Authentication, RBAC, CRUD, Swagger, and Frontend UI
-
-
-
-
-
-
-
-
-
-
-
 
 📘 Overview
 
