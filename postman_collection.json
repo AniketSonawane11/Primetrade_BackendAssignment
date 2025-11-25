@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "Primetrade Backend API",
+    "_postman_id": "b7c8b7c1-9a11-4d2e-8748-bfa3a3d7f122",
+    "description": "Postman collection for Primetrade Backend Developer Assignment (Django + DRF + JWT + CRUD APIs)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"test123\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/auth/register/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","auth","register",""]
+        }
+      }
+    },
+
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"testuser\",\n    \"password\": \"test123\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/auth/login/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","auth","login",""]
+        }
+      }
+    },
+
+    {
+      "name": "Get Profile (Requires JWT Token)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/auth/profile/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","auth","profile",""]
+        }
+      }
+    },
+
+    {
+      "name": "Get Tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tasks/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","tasks",""]
+        }
+      }
+    },
+
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"New Task\",\n    \"description\": \"Task description\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tasks/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","tasks",""]
+        }
+      }
+    },
+
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"Updated Task\",\n    \"description\": \"Updated description\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tasks/1/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","tasks","1",""]
+        }
+      }
+    },
+
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/tasks/1/",
+          "protocol": "http",
+          "host": ["127","0","0","1"],
+          "port": "8000",
+          "path": ["api","v1","tasks","1",""]
+        }
+      }
+    }
+  ]
+}
