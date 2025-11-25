@@ -1,0 +1,17 @@
+(venv) PS C:\Users\HP\Desktop\Aniket_py\Inernshaala\Primetrade_ai_BackendAssignment-Aniket> python .\manage.py runserver
+C:\Users\HP\Desktop\Aniket_py\Inernshaala\Primetrade_ai_BackendAssignment-Aniket\venv\Lib\site-packages\rest_framework_simplejwt\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+C:\Users\HP\Desktop\Aniket_py\Inernshaala\Primetrade_ai_BackendAssignment-Aniket\venv\Lib\site-packages\rest_framework_simplejwt\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 25, 2025 - 11:04:34
+Django version 5.2.8, using settings 'core.settings' 
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+
